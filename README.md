@@ -281,3 +281,133 @@ a9ee670 chore: Create another file
 ae8617c chore: Create initial file
 
 ```
+
+### Ex7:
+
+```bash
+
+$ git rebase -i HEAD~3
+hint: Waiting for your editor to close the file...
+
+
+$ git rebase -i HEAD~3
+Successfully rebased and updated refs/heads/main.
+```
+
+### Ex8:
+
+```bash
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git checkout -b ft/branch
+Switched to a new branch 'ft/branch'
+
+user@_26026 MINGW64 /d/Advanced Git (ft/branch)
+$ echo "Some content for test5" > test5.md
+user@_26026 MINGW64 /d/Advanced Git (ft/branch)
+$ git add test5.md
+
+user@_26026 MINGW64 /d/Advanced Git (ft/branch)
+$ git commit -m "Implemented test 5"
+[ft/branch 23eca49] Implemented test 5
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test5.md
+
+user@_26026 MINGW64 /d/Advanced Git (ft/branch)
+$
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git cherry-pick 23eca49
+[main 332b328] Implemented test 5
+ Date: Mon Mar 3 19:34:56 2025 +0200
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test5.md
+
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git cherry-pick --continue
+error: no cherry-pick or revert in progress
+fatal: cherry-pick failed
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git log --oneline
+332b328 (HEAD -> main) Implemented test 5
+b70ceb6  added README.md
+7922a35 chore: Create another file
+b543dfc chore: Create third file
+ae8617c chore: Create initial file
+```
+
+### Ex9:
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git log --graph --oneline --all --decorate
+* 332b328 (HEAD -> main) Implemented test 5
+| * 23eca49 (ft/branch) Implemented test 5
+|/
+* b70ceb6  added README.md
+* 7922a35 chore: Create another file
+* b543dfc chore: Create third file
+| *   8af45cd (refs/stash) WIP on main: b9d8441 Unwanted commit
+| |\
+| | * 2616ac2 index on main: b9d8441 Unwanted commit
+| |/
+| * b9d8441 Unwanted commit
+| * 98c5277 chore: Create third file
+| * a9ee670 chore: Create another file
+|/
+* ae8617c chore: Create initial file
+```
+
+### Ex10:
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git reflog
+332b328 (HEAD -> main) HEAD@{0}: cherry-pick: Implemented test 5
+b70ceb6 HEAD@{1}: checkout: moving from ft/branch to main
+23eca49 (ft/branch) HEAD@{2}: commit: Implemented test 5
+b70ceb6 HEAD@{3}: checkout: moving from main to ft/branch
+b70ceb6 HEAD@{4}: rebase (finish): returning to refs/heads/main
+b70ceb6 HEAD@{5}: rebase (pick): added README.md
+7922a35 HEAD@{6}: rebase (pick): chore: Create another file
+b543dfc HEAD@{7}: rebase (pick): chore: Create third file
+ae8617c HEAD@{8}: rebase (start): checkout HEAD~3
+da83a14 HEAD@{9}: rebase (finish): returning to refs/heads/main
+da83a14 HEAD@{10}: rebase (start): checkout HEAD~2
+da83a14 HEAD@{11}: commit: added README.md
+98c5277 HEAD@{12}: rebase (finish): returning to refs/heads/main
+98c5277 HEAD@{13}: rebase (start): checkout HEAD~1
+b9d8441 HEAD@{14}: reset: moving to HEAD
+b9d8441 HEAD@{15}: commit: Unwanted commit
+98c5277 HEAD@{16}: rebase (finish): returning to refs/heads/main
+98c5277 HEAD@{17}: rebase (squash): chore: Create third file
+522f4b4 HEAD@{18}: rebase (start): checkout HEAD~2
+bb48202 HEAD@{19}: reset: moving to HEAD
+bb48202 HEAD@{20}: reset: moving to HEAD
+bb48202 HEAD@{21}: commit: chore: Create fourth file
+522f4b4 HEAD@{22}: commit: chore: Create third file
+a9ee670 HEAD@{23}: reset: moving to HEAD
+a9ee670 HEAD@{24}: reset: moving to HEAD~1
+3b8b08a HEAD@{25}: commit: chore: Create third file
+a9ee670 HEAD@{26}: reset: moving to HEAD~1
+1295381 HEAD@{27}: reset: moving to HEAD
+1295381 HEAD@{28}: reset: moving to HEAD~1
+8235562 HEAD@{29}: rebase (finish): returning to refs/heads/main
+8235562 HEAD@{30}: rebase (squash): chore: Create second file
+4e0acbd HEAD@{31}: rebase (start): checkout HEAD~2
+75e2abe HEAD@{32}: rebase (finish): returning to refs/heads/main
+75e2abe HEAD@{33}: rebase (reword): chore: Create second file
+71daf07 HEAD@{34}: rebase: fast-forward
+4e0acbd HEAD@{35}: rebase (start): checkout HEAD~2
+71daf07 HEAD@{36}: commit: first initial file
+4e0acbd HEAD@{37}: commit: initial file
+1295381 HEAD@{38}: rebase (finish): returning to refs/heads/main
+1295381 HEAD@{39}: rebase (start): checkout HEAD~2
+1295381 HEAD@{40}: commit (amend): chore: Create third and fourth files
+a24aaf1 HEAD@{41}: commit: chore: Create third and fourth files
+a9ee670 HEAD@{42}: commit: chore: Create another file
+ae8617c HEAD@{43}: commit (initial): chore: Create initial file
+(END)
+```
