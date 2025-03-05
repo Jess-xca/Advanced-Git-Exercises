@@ -1,4 +1,4 @@
-# Advanced Gi Exercises
+# Advanced Git Exercises
 
 ## Part1:
 
