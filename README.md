@@ -2,7 +2,7 @@
 
 ## Part1:
 
-### Ex1,Ex2:
+### Ex1 and Ex2:
 
 ```bash
 user@_26026 MINGW64 /d/Advanced Git (master)
