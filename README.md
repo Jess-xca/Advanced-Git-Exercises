@@ -411,3 +411,110 @@ a9ee670 HEAD@{42}: commit: chore: Create another file
 ae8617c HEAD@{43}: commit (initial): chore: Create initial file
 (END)
 ```
+
+## Part 2:
+
+### Ex1:
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git branch ft/new-feature
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git checkout ft/new-feature
+M       README.md
+Switched to branch 'ft/new-feature'
+
+user@_26026 MINGW64 /d/Advanced Git (ft/new-feature)
+$ git branch
+  ft/branch
+* ft/new-feature
+  main
+```
+
+## Part 2:
+
+### Ex1:
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git branch ft/new-feature
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git switch ft/new-feature
+M       README.md
+Switched to branch 'ft/new-feature'
+```
+
+### Ex2:
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (ft/new-feature)
+$ touch feature.txt
+
+user@_26026 MINGW64 /d/Advanced Git (ft/new-feature)
+$ echo "This is the core functionality for the new feature." > feature.txt
+
+user@_26026 MINGW64 /d/Advanced Git (ft/new-feature)
+$ git add feature.txt
+
+user@_26026 MINGW64 /d/Advanced Git (ft/new-feature)
+$ git commit -m "feat: Implemented core functionality for new feature"
+[ft/new-feature 53560c5] feat: Implemented core functionality for new feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+```
+
+### Ex3:
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (ft/new-feature)
+$ git checkout main
+M       README.md
+Switched to branch 'main'
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ touch readme.txt
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ echo "This project contains various features and functionalities." > readme.txt
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git add readme.txt
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git commit -m "docs: Updated project readme"
+[main db51519] docs: Updated project readme
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.txt
+```
+
+### Ex4:
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git checkout ft/new-feature
+M       README.md
+Switched to branch 'ft/new-feature'
+
+user@_26026 MINGW64 /d/Advanced Git (ft/new-feature)
+$ git push origin ft/new-feature
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 352 bytes | 352.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/new-feature' on GitHub by visiting:
+remote:      https://github.com/Jess-xca/Advanced-Git-Exercises/pull/new/ft/new-feature
+remote:
+To https://github.com/Jess-xca/Advanced-Git-Exercises.git
+ * [new branch]      ft/new-feature -> ft/new-feature
+
+user@_26026 MINGW64 /d/Advanced Git (ft/new-feature)
+$ git pull origin ft/new-feature
+From https://github.com/Jess-xca/Advanced-Git-Exercises
+ * branch            ft/new-feature -> FETCH_HEAD
+Already up to date.
+```
