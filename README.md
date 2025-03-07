@@ -518,3 +518,28 @@ From https://github.com/Jess-xca/Advanced-Git-Exercises
  * branch            ft/new-feature -> FETCH_HEAD
 Already up to date.
 ```
+
+### Ex5:
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git branch -d ft/new-feature
+error: the branch 'ft/new-feature' is not fully merged
+hint: If you are sure you want to delete it, run 'git branch -D ft/new-feature'
+hint: Disable this message with "git config advice.forceDeleteBranch false"
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git branch -D ft/new-feature
+Deleted branch ft/new-feature (was 8b0029a).
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git push origin --delete ft/new-feature
+To https://github.com/Jess-xca/Advanced-Git-Exercises.git
+ - [deleted]         ft/new-feature
+```
+
+### Ex6:
+
+```bash
+
+```
