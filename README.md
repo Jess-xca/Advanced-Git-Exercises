@@ -519,9 +519,15 @@ From https://github.com/Jess-xca/Advanced-Git-Exercises
 Already up to date.
 ```
 
-### Ex5:
+### Ex 5
 
 ```bash
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git pull origin main
+From https://github.com/Jess-xca/Advanced-Git-Exercises
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
 user@_26026 MINGW64 /d/Advanced Git (main)
 $ git branch -d ft/new-feature
 error: the branch 'ft/new-feature' is not fully merged
@@ -534,11 +540,81 @@ Deleted branch ft/new-feature (was 8b0029a).
 
 user@_26026 MINGW64 /d/Advanced Git (main)
 $ git push origin --delete ft/new-feature
-To https://github.com/Jess-xca/Advanced-Git-Exercises.git
- - [deleted]         ft/new-feature
 ```
 
-### Ex6:
+### Ex 6
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git log --oneline --decorate --graph --all
+* 72bea31 (HEAD -> main, origin/main) Part 2 progress
+* 65f0586 Part 2 progress
+* 453b65c Part 2 progress
+* db51519 docs: Updated project readme
+* 1398129 second file
+* 36b443d initial file
+* edd35d4 complete Part1:
+* 332b328 Implemented test 5
+| * 23eca49 (ft/branch) Implemented test 5
+|/
+* b70ceb6  added README.md
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git checkout -b ft/new-branch-from-commit 453b65c
+error: Your local changes to the following files would be overwritten by checkout:
+        README.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git add README.md
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git commit -m "Save changes before switching branches"
+[main 7bb5214] Save changes before switching branches
+ 1 file changed, 25 insertions(+)
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git checkout -b ft/new-branch-from-commit 453b65c
+Switched to a new branch 'ft/new-branch-from-commit'
+
+user@_26026 MINGW64 /d/Advanced Git (ft/new-branch-from-commit)
+$ git branch
+  ft/branch
+* ft/new-branch-from-commit
+  main
+```
+
+### Ex 7
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (ft/new-branch-from-commit)
+$ git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        README.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+user@_26026 MINGW64 /d/Advanced Git (ft/new-branch-from-commit)
+$ git stash
+Saved working directory and index state WIP on ft/new-branch-from-commit: 453b65c Part 2 progress
+
+user@_26026 MINGW64 /d/Advanced Git (ft/new-branch-from-commit)
+$ git checkout main
+Switched to branch 'main'
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git pull origin main
+From https://github.com/Jess-xca/Advanced-Git-Exercises
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git merge ft/new-branch-from-commit
+Already up to date.
+```
+
+### Ex 8
 
 ```bash
 
