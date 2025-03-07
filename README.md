@@ -617,5 +617,83 @@ Already up to date.
 ### Ex 8
 
 ```bash
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git checkout ft/new-branch-from-commit
+error: Your local changes to the following files would be overwritten by checkout:
+        README.md
+Please commit your changes or stash them before you switch branches.
+Aborting
 
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git add README.md
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git commit -m "Exercise 8, Part 2"
+[main f21bbaa] Exercise 8, Part 2
+ 1 file changed, 80 insertions(+), 4 deletions(-)
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git checkout ft/new-branch-from-commit
+Switched to branch 'ft/new-branch-from-commit'
+
+user@_26026 MINGW64 /d/Advanced Git (ft/new-branch-from-commit)
+$ git fetch origin
+
+user@_26026 MINGW64 /d/Advanced Git (ft/new-branch-from-commit)
+$ git checkout main
+Switched to branch 'main'
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git pull origin main
+From https://github.com/Jess-xca/Advanced-Git-Exercises
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git checkout ft/new-branch-from-commit
+Switched to branch 'ft/new-branch-from-commit'
+
+user@_26026 MINGW64 /d/Advanced Git (ft/new-branch-from-commit)
+$ git rebase main
+Successfully rebased and updated refs/heads/ft/new-branch-from-commit.
+```
+
+### Ex 9
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (ft/new-branch-from-commit)
+$ git branch -m ft/new-branch-from-commit ft/improved-branch-name
+```
+
+### Ex 10
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (ft/improved-branch-name)
+$ git checkout 453b65c
+Note: switching to '453b65c'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 453b65c Part 2 progress
+
+user@_26026 MINGW64 /d/Advanced Git ((453b65c...))
+$ git checkout -b new-branch-from-detached
+Switched to a new branch 'new-branch-from-detached'
+
+user@_26026 MINGW64 /d/Advanced Git (new-branch-from-detached)
+$ git checkout main
+Switched to branch 'main'
 ```
