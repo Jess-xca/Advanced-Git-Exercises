@@ -939,5 +939,34 @@ Deleted tag 'v1.0' (was 3bd5de4)
 ### Ex 9:
 
 ```bash
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git add README.md
 
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git commit -m "Updated README.md"
+[main 7a53eb9] Updated README.md
+ 1 file changed, 148 insertions(+)
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git push origin main
+Enumerating objects: 38, done.
+Counting objects: 100% (38/38), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (35/35), done.
+Writing objects: 100% (36/36), 4.44 KiB | 81.00 KiB/s, done.
+Total 36 (delta 24), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (24/24), completed with 1 local object.
+To github.com:Jess-xca/Advanced-Git-Exercises.git
+   a3d83b3..7a53eb9  main -> main
+
+```
+
+### Ex 10:
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git pull origin main
+From github.com:Jess-xca/Advanced-Git-Exercises
+ * branch            main       -> FETCH_HEAD
+Already up to date.
 ```
