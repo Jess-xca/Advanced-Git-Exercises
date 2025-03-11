@@ -748,8 +748,8 @@ $ git commit -m "Resolved merge conflict in README.md"
 ### Ex 3:
 
 ```bash
+
 This is a change from feature-branch.
-This change is from main branch.
 
 ```
 
