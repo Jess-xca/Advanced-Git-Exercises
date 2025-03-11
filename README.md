@@ -791,5 +791,153 @@ Merge made by the 'ort' strategy.
 ### Ex 4:
 
 ```bash
+user@_26026 MINGW64 /d/Advanced Git (main|MERGING)
+$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+
+'git mergetool' will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff nvimdiff
+Merging:
+README.md
+
+Normal merge conflict for 'README.md':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (vimdiff):
+4 files to edit
+
+user@_26026 MINGW64 /d/Advanced Git (main|MERGING)
+$ git add README.md
+'git mergetool' will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff nvimdiff
+Merging:
+README.md
+
+Normal merge conflict for 'README.md':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (vimdiff):
+4 files to edit
+
+user@_26026 MINGW64 /d/Advanced Git (main|MERGING)
+$ git commit -m "Resolved merge conflict in README.md"
+[main dd08ce3] Resolved merge conflict in README.md
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+README.md
+
+Normal merge conflict for 'README.md':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (vimdiff):
+4 files to edit
+
+user@_26026 MINGW64 /d/Advanced Git (main|MERGING)
+$ git commit -m "Resolved merge conflict in README.md"
+[main dd08ce3] Resolved merge conflict in README.md
+```
+
+### Ex 5:
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git checkout 504692b
+error: Your local changes to the following files would be overwritten by checkout:
+        README.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git stash
+Saved working directory and index state WIP on main: dd08ce3 Resolved merge conflict in README.md
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git checkout 504692b
+Note: switching to '504692b'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 504692b Updated README in feature-branch
+
+user@_26026 MINGW64 /d/Advanced Git ((504692b...))
+$ git stash pop
+Auto-merging README.md
+HEAD detached at 504692b
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (f1b71d84770bc003eb26ad370da31dd8614d52f1)
+
+```
+
+### Ex 6:
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ touch .gitignore
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git add .gitignore
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git commit -m "Added FETCH_HEAD to .gitignore"
+[main 3bd5de4] Added FETCH_HEAD to .gitignore
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+```
+
+### Ex 7:
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git tag v1.0
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git tag
+v1.0
+```
+
+### Ex 8:
+
+```bash
+git tag -d v1.0
+Deleted tag 'v1.0' (was 3bd5de4)
+```
+
+### Ex 9:
+
+```bash
 
 ```
