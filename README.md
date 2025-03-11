@@ -749,7 +749,7 @@ $ git commit -m "Resolved merge conflict in README.md"
 
 ```bash
 This is a change from feature-branch.
-This change is from feature-branch.
+
 ```
 
 This is a change from main branch.
