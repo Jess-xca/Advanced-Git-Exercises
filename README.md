@@ -749,7 +749,46 @@ $ git commit -m "Resolved merge conflict in README.md"
 
 ```bash
 This is a change from feature-branch.
-
+This change is from feature-branch.
 ```
 
 This is a change from main branch.
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git checkout -b feature-branch
+Switched to a new branch 'feature-branch'
+
+user@_26026 MINGW64 /d/Advanced Git (feature-branch)
+$ git add README.md
+
+user@_26026 MINGW64 /d/Advanced Git (feature-branch)
+$ git commit -m "Updated README in feature-branch"
+[feature-branch 63d195e] Updated README in feature-branch
+ 1 file changed, 16 insertions(+), 1 deletion(-)
+
+user@_26026 MINGW64 /d/Advanced Git (feature-branch)
+$ git checkout main
+Switched to branch 'main'
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git add README.md
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git commit -m "Updated README in main branch"
+[main b1a8c50] Updated README in main branch
+ 1 file changed, 2 insertions(+)
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git merge feature-branch
+Auto-merging README.md
+Merge made by the 'ort' strategy.
+ README.md | 17 ++++++++++++++++-
+ 1 file changed, 16 insertions(+), 1 deletion(-)
+```
+
+### Ex 4:
+
+```bash
+
+```
