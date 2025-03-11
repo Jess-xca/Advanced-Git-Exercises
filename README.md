@@ -687,7 +687,7 @@ Switched to branch 'main'
 
 ## Part 3:
 
-### Ex 1:
+### Ex 1 and 2:
 
 ```bash
 user@_26026 MINGW64 /d/Advanced Git (main)
@@ -734,5 +734,20 @@ Untracked files:
 no changes added to commit (use "git add" and/or "git commit -a")
 The stash entry is kept in case you need it again.
 
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git add README.md
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git commit -m "Resolved merge conflict in README.md"
+[main 9af116d] Resolved merge conflict in README.md
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+ create mode 100644 FETCH_HEAD
+
+```
+
+### Ex 3:
+
+```bash
+This is a change from feature-branch.
 
 ```
