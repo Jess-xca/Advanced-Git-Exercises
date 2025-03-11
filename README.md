@@ -432,19 +432,6 @@ $ git branch
   main
 ```
 
-## Part 2:
-
-### Ex1:
-
-```bash
-user@_26026 MINGW64 /d/Advanced Git (main)
-$ git branch ft/new-feature
-user@_26026 MINGW64 /d/Advanced Git (main)
-$ git switch ft/new-feature
-M       README.md
-Switched to branch 'ft/new-feature'
-```
-
 ### Ex2:
 
 ```bash
@@ -696,4 +683,57 @@ Switched to a new branch 'new-branch-from-detached'
 user@_26026 MINGW64 /d/Advanced Git (new-branch-from-detached)
 $ git checkout main
 Switched to branch 'main'
+```
+
+## Part 3:
+
+### Ex 1:
+
+```bash
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git stash
+Saved working directory and index state WIP on main: a3d83b3 End of Part 2 Exercise
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git stash list
+stash@{0}: WIP on main: a3d83b3 End of Part 2 Exercise
+stash@{1}: WIP on ft/new-branch-from-commit: 453b65c Part 2 progress
+stash@{2}: WIP on main: b9d8441 Unwanted commit
+stash@{3}: WIP on main: bb48202 chore: Create fourth file
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git stash apply
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        FETCH_HEAD
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$ git stash pop
+error: Your local changes to the following files would be overwritten by merge:
+        README.md
+Please commit your changes or stash them before you merge.
+Aborting
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        FETCH_HEAD
+
+no changes added to commit (use "git add" and/or "git commit -a")
+The stash entry is kept in case you need it again.
+
+user@_26026 MINGW64 /d/Advanced Git (main)
+$
 ```
