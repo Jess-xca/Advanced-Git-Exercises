@@ -734,6 +734,5 @@ Untracked files:
 no changes added to commit (use "git add" and/or "git commit -a")
 The stash entry is kept in case you need it again.
 
-user@_26026 MINGW64 /d/Advanced Git (main)
-$
+
 ```
